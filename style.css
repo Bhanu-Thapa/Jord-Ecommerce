@@ -1,0 +1,76 @@
+/* font-family: 'Mochiy Pop One', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Road Rage', sans-serif; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  /* background-color: black; */
+  height: 80vh;
+}
+
+nav {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+nav img {
+  width: 100px;
+  height: 100px;
+}
+
+nav .category {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -120px;
+}
+
+nav .category h3 {
+  cursor: pointer;
+}
+
+nav .search {
+  border: 1px solid black;
+  border-radius: 7px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .search input {
+  height: 30px;
+  width: 250px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+nav .search input::placeholder {
+  font-size: 18px;
+}
+
+nav .list {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+nav .list div {
+  cursor: pointer;
+}
