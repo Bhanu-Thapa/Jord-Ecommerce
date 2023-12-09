@@ -15,8 +15,10 @@ font-family: 'Road Rage', sans-serif; */
 
 header {
   /* background-color: black; */
-  height: 80vh;
+  height: 85vh;
 }
+
+/* NAV BAR  */
 
 nav {
   /* background-color: red; */
@@ -49,6 +51,7 @@ nav .search {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 5px;
 }
 
 nav .search input {
@@ -57,6 +60,7 @@ nav .search input {
   font-size: 18px;
   border: none;
   outline: none;
+  margin-left: 5px;
 }
 
 nav .search input::placeholder {
@@ -73,4 +77,72 @@ nav .list {
 
 nav .list div {
   cursor: pointer;
+}
+
+nav .list div i {
+  margin-bottom: 13px;
+}
+
+/* SLIDER */
+
+header {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+.slider {
+  flex-grow: 1;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 1200px;
+  max-height: 100%;
+  position: absolute;
+  transition: 0.5s;
+}
+
+/* .slider img:nth-child(1) {
+  z-index: 1;
+} */
+
+.slider .ar {
+  /* border: 1px solid black; */
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  right: 0;
+  bottom: 50%;
+  transform: translate(-5%, 50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.slider .al {
+  /* border: 1px solid black; */
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  left: 0;
+  bottom: 50%;
+  transform: translate(5%, 50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  display: none;
 }
