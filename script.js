@@ -44,3 +44,33 @@ function imgslide() {
     ar.style.display = 'flex';
   }
 }
+
+// json
+
+let ts = document.querySelector('.trend-slider');
+
+fetch('./json/trend.json')
+  .then((respose) => {
+    return respose.json();
+  })
+  .then((val) => {
+    val.forEach((p) => {
+      let pro = document.createElement('div');
+      pro.innerHTML = ` <div class='product-card'>
+      <div class="p-img">
+        <img src="${p.img}" alt="Casual">
+      </div>
+      <div class="p-details-sec">
+        <div class="p-details">
+          <p class="p-name">${p.name}</p>
+          <p class="p-price">&#8377; ${p.price}/-</p>
+        </div>
+        <div class="add-cart">
+          <i class="fa-solid fa-cart-shopping fa-xl"></i>
+          <p>Add Cart</p>
+        </div>
+      </div>
+    </div>`;
+      ts.appendChild(pro);
+    });
+  });

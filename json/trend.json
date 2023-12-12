@@ -1,0 +1,17 @@
+[
+  {
+    "img": "images/Casual/c1.jpg",
+    "name": "Air Force 1",
+    "price": "7500"
+  },
+  {
+    "img": "images/Casual/c2.jpg",
+    "name": "Air Force 2",
+    "price": "5500"
+  },
+  {
+    "img": "images/Casual/c3.jpg",
+    "name": "Air Force 3",
+    "price": "7000"
+  }
+]
