@@ -1,17 +1,50 @@
 [
   {
     "img": "images/Casual/c1.jpg",
-    "name": "Air Force 1",
+    "name": "Nike Air Force 1",
+    "category": "unisex",
     "price": "7500"
   },
   {
     "img": "images/Casual/c2.jpg",
-    "name": "Air Force 2",
-    "price": "5500"
+    "name": "Nike Air Force 1 Mid",
+    "category": "unisex",
+    "price": "8500"
   },
   {
-    "img": "images/Casual/c3.jpg",
-    "name": "Air Force 3",
-    "price": "7000"
+    "img": "images/Casual/c4.jpg",
+    "name": "Nike Air Force 1 LV8",
+    "category": "unisex",
+    "price": "9000"
+  },
+  {
+    "img": "images/Casual/c5.jpg",
+    "name": "Nike Air Max 90",
+    "category": "unisex",
+    "price": "7800"
+  },
+  {
+    "img": "images/Casual/c6.jpg",
+    "name": "Nike Blazer Mid",
+    "category": "unisex",
+    "price": "8000"
+  },
+  {
+    "img": "images/Casual/c7.jpg",
+    "name": "Nike Court Legacy",
+    "category": "unisex",
+    "price": "9000"
+  },
+  {
+    "img": "images/Casual/c9.jpg",
+    "name": "Nike Court Vision Mid",
+    "category": "unisex",
+    "price": "21000"
+  },
+  {
+    "img": "images/Casual/c10.jpg",
+    "name": "Jordan Delta 2",
+    "category": "unisex",
+    "price": "30000"
   }
 ]

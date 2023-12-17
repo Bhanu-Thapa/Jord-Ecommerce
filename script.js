@@ -1,9 +1,6 @@
 let slider = document.querySelectorAll('.img');
 let ar = document.querySelector('.ar');
 let al = document.querySelector('.al');
-
-console.log(slider);
-
 slider.forEach((slide, index) => {
   slide.style.left = `${index * 100}%`;
 });
@@ -48,29 +45,67 @@ function imgslide() {
 // json
 
 let ts = document.querySelector('.trend-slider');
-
+let element = [];
 fetch('./json/trend.json')
   .then((respose) => {
     return respose.json();
   })
   .then((val) => {
-    val.forEach((p) => {
+    val.forEach((p, i) => {
       let pro = document.createElement('div');
-      pro.innerHTML = ` <div class='product-card'>
+      pro.className = 'product-card';
+      // pro.style.left = `${i * 30}%`;
+      pro.innerHTML = `
       <div class="p-img">
         <img src="${p.img}" alt="Casual">
       </div>
       <div class="p-details-sec">
         <div class="p-details">
           <p class="p-name">${p.name}</p>
+          <p class="p-cate">${p.category}</p>
           <p class="p-price">&#8377; ${p.price}/-</p>
         </div>
         <div class="add-cart">
           <i class="fa-solid fa-cart-shopping fa-xl"></i>
           <p>Add Cart</p>
         </div>
-      </div>
     </div>`;
+
       ts.appendChild(pro);
+      element.push(pro);
+    });
+
+    element.forEach((ele, i) => {
+      ele.style.left = `${i * 28}%`;
     });
   });
+
+// Trend Slider
+
+let c = 0;
+
+function n() {
+  if (c < element.length - 6) {
+    c++;
+    trendslide();
+  }
+}
+
+function p() {
+  if (c > 0) {
+    c--;
+    trendslide();
+  }
+}
+
+function trendslide() {
+  console.log(c);
+  if (c == 2) {
+    element.forEach((slide) => {
+      slide.style.transform = `translateX(-${c * 230}%)`;
+    });
+  } else
+    element.forEach((slide) => {
+      slide.style.transform = `translateX(-${c * 300}%)`;
+    });
+}
