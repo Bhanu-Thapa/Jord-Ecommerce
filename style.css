@@ -94,6 +94,49 @@ nav .list div i {
   margin-bottom: 13px;
 }
 
+/* icon cart */
+.icon-cart {
+  position: relative;
+}
+
+.icon-cart div {
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+
+  position: absolute;
+  left: 90%;
+  bottom: 100%;
+}
+
+/* Cart Details */
+.cart-details {
+  background-color: red;
+  width: 500px;
+  position: absolute;
+  right: 0;
+  top: 1%;
+  z-index: 999;
+  display: none;
+}
+
+.cart-details .close {
+  background-color: white;
+  cursor: pointer;
+}
+
+.cart-details .tb {
+  border: 1px solid black;
+  width: 400px;
+}
+
+.cart-details p {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 /* SLIDER */
 
 header {
@@ -182,7 +225,6 @@ header {
 }
 
 .product-card {
-  border: 1px solid black;
   height: 420px;
   width: 322px;
   display: flex;
@@ -190,7 +232,16 @@ header {
   justify-content: space-between;
   background-color: white;
   position: absolute;
-  transition: 0.5s;
+  transition: all 0.5s;
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  border: 1px solid black;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
 }
 
 .p-img {
@@ -202,6 +253,7 @@ header {
 .p-img img {
   width: 100%;
   height: 100%;
+  transition: transform 0.5s;
 }
 
 .p-details-sec {

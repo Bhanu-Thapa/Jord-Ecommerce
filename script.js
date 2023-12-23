@@ -1,6 +1,10 @@
 let slider = document.querySelectorAll('.img');
 let ar = document.querySelector('.ar');
 let al = document.querySelector('.al');
+let acc = document.querySelector('.add-cart-counter');
+let addCartCounter = 0;
+let iconCart = document.querySelector('.icon-cart');
+
 slider.forEach((slide, index) => {
   slide.style.left = `${index * 100}%`;
 });
@@ -46,7 +50,7 @@ function imgslide() {
 
 let ts = document.querySelector('.trend-slider');
 let element = [];
-fetch('./json/trend.json')
+product = fetch('./json/trend.json')
   .then((respose) => {
     return respose.json();
   })
@@ -54,9 +58,7 @@ fetch('./json/trend.json')
     val.forEach((p, i) => {
       let pro = document.createElement('div');
       pro.className = 'product-card';
-      // pro.style.left = `${i * 30}%`;
-      pro.innerHTML = `
-      <div class="p-img">
+      pro.innerHTML = `<div class="p-img">
         <img src="${p.img}" alt="Casual">
       </div>
       <div class="p-details-sec">
@@ -65,7 +67,7 @@ fetch('./json/trend.json')
           <p class="p-cate">${p.category}</p>
           <p class="p-price">&#8377; ${p.price}/-</p>
         </div>
-        <div class="add-cart">
+        <div class="add-cart" data-id="${p.id}">
           <i class="fa-solid fa-cart-shopping fa-xl"></i>
           <p>Add Cart</p>
         </div>
@@ -75,9 +77,37 @@ fetch('./json/trend.json')
       element.push(pro);
     });
 
+    // trend slider
     element.forEach((ele, i) => {
       ele.style.left = `${i * 28}%`;
     });
+
+    // add cart
+
+    let ac = document.querySelectorAll('.add-cart');
+    ac.forEach((v, i) => {
+      v.addEventListener('click', () => {
+        addCart(val[i]);
+      });
+    });
+
+    function addCart(i) {
+      addCartCounter++;
+      acc.innerText = addCartCounter;
+      console.log(i);
+      console.log(addCartCounter);
+
+      // cartDetails
+
+      let tr = document.createElement('tr');
+      tr.classList.add('table-row');
+      tr.innerHTML = `
+      <td>${i.id}</td>
+      <td>${i.name} </td>
+      <td>${i.price}</td>`;
+
+      table.appendChild(tr);
+    }
   });
 
 // Trend Slider
@@ -99,7 +129,6 @@ function p() {
 }
 
 function trendslide() {
-  console.log(c);
   if (c == 2) {
     element.forEach((slide) => {
       slide.style.transform = `translateX(-${c * 230}%)`;
@@ -109,3 +138,26 @@ function trendslide() {
       slide.style.transform = `translateX(-${c * 300}%)`;
     });
 }
+
+// ICON CART
+
+let cartDetails = document.querySelector('.cart-details');
+let close = cartDetails.querySelector('.close');
+let ops = cartDetails.querySelector('p');
+let hitems = cartDetails.querySelector('h2');
+iconCart.addEventListener('click', () => {
+  if (addCartCounter == 0) {
+    table.classList.remove('tb');
+  }
+  if (addCartCounter != 0) {
+    ops.style.display = 'none';
+    table.classList.add('tb');
+  }
+  cartDetails.style.display = 'initial';
+});
+
+close.addEventListener('click', () => {
+  cartDetails.style.display = 'none';
+});
+
+let table = cartDetails.querySelector('table');
