@@ -122,19 +122,54 @@ nav .list div i {
   display: none;
 }
 
+.cart-details .tr {
+  width: 500px;
+  height: 50px;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.cart-details .tr div {
+  border: 1px solid black;
+}
+
+.cd-img {
+  background-color: red;
+  width: 60px;
+}
+
+.cd-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.cd-name {
+  width: 320px;
+}
+
+.cd-qty {
+  width: 50px;
+  /* background-color: red; */
+}
+.cd-price {
+  width: 50px;
+  /* background-color: red; */
+}
 .cart-details .close {
   background-color: white;
   cursor: pointer;
 }
 
-.cart-details .tb {
+/* .cart-details .tb {
   border: 1px solid black;
   width: 400px;
-}
+} */
 
 .cart-details p {
   font-size: 30px;
   font-weight: 700;
+  /* display: none; */
 }
 
 /* SLIDER */

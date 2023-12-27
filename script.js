@@ -1,8 +1,7 @@
 let slider = document.querySelectorAll('.img');
 let ar = document.querySelector('.ar');
 let al = document.querySelector('.al');
-let acc = document.querySelector('.add-cart-counter');
-let addCartCounter = 0;
+
 let iconCart = document.querySelector('.icon-cart');
 
 slider.forEach((slide, index) => {
@@ -90,25 +89,42 @@ product = fetch('./json/trend.json')
         addCart(val[i]);
       });
     });
-
-    function addCart(i) {
-      addCartCounter++;
-      acc.innerText = addCartCounter;
-      console.log(i);
-      console.log(addCartCounter);
-
-      // cartDetails
-
-      let tr = document.createElement('tr');
-      tr.classList.add('table-row');
-      tr.innerHTML = `
-      <td>${i.id}</td>
-      <td>${i.name} </td>
-      <td>${i.price}</td>`;
-
-      table.appendChild(tr);
-    }
   });
+
+let cart = [];
+
+function addCart(product) {
+  acc.textContent++;
+  let qtyUpdate = cart.find((check) => {
+    return check.id === product.id;
+  });
+  if (qtyUpdate) {
+    qtyUpdate.quantity++;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  console.log(cart);
+  display();
+}
+
+// DISPLAY
+// cartDetails
+
+function display() {
+  tb.innerHTML = '';
+  cart.forEach((i) => {
+    let tr = document.createElement('div');
+    tr.classList.add('tr');
+    tr.innerHTML = `
+    <div class="cd-img"><img src="${i.img}" alt=""></div>
+    <div class="cd-name">${i.name}</div>
+    <input class="cd-qty" type="number" min="1" value = "${i.quantity}">
+    <div class="cd-price">${i.price}</div>
+    <div class="cd-remove">remove</div>
+    `;
+    tb.appendChild(tr);
+  });
+}
 
 // Trend Slider
 
@@ -140,18 +156,19 @@ function trendslide() {
 }
 
 // ICON CART
-
 let cartDetails = document.querySelector('.cart-details');
 let close = cartDetails.querySelector('.close');
 let ops = cartDetails.querySelector('p');
 let hitems = cartDetails.querySelector('h2');
+let tb = cartDetails.querySelector('.tb');
+let acc = document.querySelector('.add-cart-counter');
 iconCart.addEventListener('click', () => {
-  if (addCartCounter == 0) {
-    table.classList.remove('tb');
+  if (acc.textContent == 0) {
+    tb.classList.remove('tb');
   }
-  if (addCartCounter != 0) {
+  if (acc.textContent != 0) {
     ops.style.display = 'none';
-    table.classList.add('tb');
+    tb.classList.add('tb');
   }
   cartDetails.style.display = 'initial';
 });
@@ -159,5 +176,3 @@ iconCart.addEventListener('click', () => {
 close.addEventListener('click', () => {
   cartDetails.style.display = 'none';
 });
-
-let table = cartDetails.querySelector('table');
