@@ -1,3 +1,4 @@
+// IMAGE SLIDER
 let slider = document.querySelectorAll('.img');
 let ar = document.querySelector('.ar');
 let al = document.querySelector('.al');
@@ -45,16 +46,20 @@ function imgslide() {
   }
 }
 
-// json
+////////////JSON  ////////////
 
 let ts = document.querySelector('.trend-slider');
 let element = [];
+
+/// DATA FETCH ///////
+
 product = fetch('./json/trend.json')
   .then((respose) => {
     return respose.json();
   })
   .then((val) => {
     val.forEach((p, i) => {
+      // CARD DISPLAY
       let pro = document.createElement('div');
       pro.className = 'product-card';
       pro.innerHTML = `<div class="p-img">
@@ -76,12 +81,9 @@ product = fetch('./json/trend.json')
       element.push(pro);
     });
 
-    // trend slider
     element.forEach((ele, i) => {
       ele.style.left = `${i * 28}%`;
     });
-
-    // add cart
 
     let ac = document.querySelectorAll('.add-cart');
     ac.forEach((v, i) => {
@@ -91,39 +93,72 @@ product = fetch('./json/trend.json')
     });
   });
 
+// ADD CART
+
 let cart = [];
 
 function addCart(product) {
-  acc.textContent++;
+  // css
+  ops.style.display = 'none';
+  proceed.style.display = 'initial';
+
   let qtyUpdate = cart.find((check) => {
     return check.id === product.id;
   });
   if (qtyUpdate) {
     qtyUpdate.quantity++;
+    qtyUpdate.price *= qtyUpdate.quantity;
   } else {
+    acc.textContent++;
     cart.push({ ...product, quantity: 1 });
   }
-  console.log(cart);
   display();
 }
 
-// DISPLAY
-// cartDetails
+// DISPLAY CART
 
 function display() {
   tb.innerHTML = '';
+  let sum = 0;
+  totalPrice.textContent = sum;
   cart.forEach((i) => {
     let tr = document.createElement('div');
     tr.classList.add('tr');
     tr.innerHTML = `
-    <div class="cd-img"><img src="${i.img}" alt=""></div>
+    <div class="cd-img"><img src="${i.img}" alt="product-image"></div>
     <div class="cd-name">${i.name}</div>
     <input class="cd-qty" type="number" min="1" value = "${i.quantity}">
     <div class="cd-price">${i.price}</div>
-    <div class="cd-remove">remove</div>
+    <div class="cd-remove"> <i class="fa-solid fa-trash" ></i>asdf</div>
     `;
     tb.appendChild(tr);
+    sum += +i.price;
+    totalPrice.textContent = sum;
   });
+
+  // ADD CART
+  let rem = document.querySelectorAll('.cd-remove');
+
+  rem.forEach((rem, i) => {
+    rem.addEventListener('click', () => {
+      remove(i);
+    });
+  });
+}
+
+// REMOVE
+function remove(i) {
+  acc.textContent--;
+  cart.splice(i, 1);
+  console.log(cart.length);
+  if (cart.length > 0) {
+    display();
+  } else {
+    ops.style.display = 'initial';
+    total.style.display = 'none';
+    proceed.style.display = 'none';
+    display();
+  }
 }
 
 // Trend Slider
@@ -156,19 +191,26 @@ function trendslide() {
 }
 
 // ICON CART
+
 let cartDetails = document.querySelector('.cart-details');
 let close = cartDetails.querySelector('.close');
 let ops = cartDetails.querySelector('p');
-let hitems = cartDetails.querySelector('h2');
+// let hitems = cartDetails.querySelector('h2');
 let tb = cartDetails.querySelector('.tb');
 let acc = document.querySelector('.add-cart-counter');
+const proceed = document.querySelector('.proceed');
+
 iconCart.addEventListener('click', () => {
   if (acc.textContent == 0) {
     tb.classList.remove('tb');
+    proceed.style.display = 'none';
+    total.style.display = 'none';
   }
   if (acc.textContent != 0) {
     ops.style.display = 'none';
     tb.classList.add('tb');
+    proceed.style.display = 'initial';
+    total.style.display = 'flex';
   }
   cartDetails.style.display = 'initial';
 });
@@ -176,3 +218,6 @@ iconCart.addEventListener('click', () => {
 close.addEventListener('click', () => {
   cartDetails.style.display = 'none';
 });
+
+let total = cartDetails.querySelector('.total');
+let totalPrice = cartDetails.querySelector('.total-price');

@@ -8,6 +8,8 @@ font-family: 'Road Rage', sans-serif; */
   box-sizing: border-box;
 }
 
+/* ///////////////// HADER PART ////////////////////// */
+
 .container {
   width: 1200px;
   margin: auto;
@@ -44,12 +46,6 @@ nav .category {
 nav .category h3 {
   cursor: pointer;
 }
-
-/* transition not working */
-
-/* nav .category div {
-  transition: 1s;
-} */
 
 nav .category div:hover {
   border-bottom: 1px solid black;
@@ -95,6 +91,7 @@ nav .list div i {
 }
 
 /* icon cart */
+
 .icon-cart {
   position: relative;
 }
@@ -111,7 +108,8 @@ nav .list div i {
   bottom: 100%;
 }
 
-/* Cart Details */
+/*///// Cart Details //////*/
+
 .cart-details {
   background-color: red;
   width: 500px;
@@ -161,10 +159,13 @@ nav .list div i {
   cursor: pointer;
 }
 
-/* .cart-details .tb {
-  border: 1px solid black;
-  width: 400px;
-} */
+.cart-details .tb {
+  /* border: 1px solid black; */
+  max-height: 300px;
+  /* width: 520px; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 .cart-details p {
   font-size: 30px;
@@ -172,7 +173,22 @@ nav .list div i {
   /* display: none; */
 }
 
-/* SLIDER */
+.proceed {
+  display: initial;
+  background-color: white;
+  cursor: pointer;
+}
+
+.cp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  justify-content: space-between;
+}
+
+/*////////////// SLIDER ///////////////*/
 
 header {
   display: flex;
@@ -235,7 +251,8 @@ header {
   display: none;
 }
 
-/* TRENDING SECTION */
+/*///////////////// TRENDING SECTION ////////////////*/
+
 .trend-sec {
   margin-bottom: 70px;
   display: flex;
