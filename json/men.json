@@ -1,0 +1,135 @@
+[
+  {
+    "id": "1",
+    "img": "images/Casual/c1.jpg",
+    "name": "Nike Air Force 1",
+    "category": "unisex",
+    "price": "7500"
+  },
+  {
+    "id": "2",
+    "img": "images/Casual/c2.jpg",
+    "name": "Nike Air Force 1 Mid",
+    "category": "unisex",
+    "price": "8500"
+  },
+  {
+    "id": "3",
+    "img": "images/Casual/c4.jpg",
+    "name": "Nike Air Force 1 LV8",
+    "category": "unisex",
+    "price": "9000"
+  },
+  {
+    "id": "4",
+    "img": "images/Casual/c5.jpg",
+    "name": "Nike Air Max 90",
+    "category": "unisex",
+    "price": "7800"
+  },
+  {
+    "id": "5",
+    "img": "images/Casual/c6.jpg",
+    "name": "Nike Blazer Mid",
+    "category": "unisex",
+    "price": "8000"
+  },
+  {
+    "id": "6",
+    "img": "images/Casual/c7.jpg",
+    "name": "Nike Court Legacy",
+    "category": "unisex",
+    "price": "9000"
+  },
+  {
+    "id": "7",
+    "img": "images/Casual/c9.jpg",
+    "name": "Nike Court Vision Mid",
+    "category": "unisex",
+    "price": "21000"
+  },
+  {
+    "id": "8",
+    "img": "images/Casual/c10.jpg",
+    "name": "Jordan Delta 2",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "9",
+    "img": "images/Jordan/j1.jpg",
+    "name": "Air Jordan 11 Urban Jungle Low",
+    "category": "unisex",
+    "price": "80000"
+  },
+  {
+    "id": "10",
+    "img": "images/Jordan/j2.jpg",
+    "name": "Air Jordan 11 Adapt",
+    "category": "unisex",
+    "price": "90000"
+  },
+  {
+    "id": "11",
+    "img": "images/Jordan/j3.jpg",
+    "name": "Air Jordan 36 Psychic Energy",
+    "category": "unisex",
+    "price": "70000"
+  },
+  {
+    "id": "12",
+    "img": "images/Jordan/j4.jpg",
+    "name": "Nike Jordan NFH",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "13",
+    "img": "images/Jordan/j5.jpg",
+    "name": "Jordan Delta 2 Chile Red",
+    "category": "unisex",
+    "price": "50000"
+  },
+  {
+    "id": "14",
+    "img": "images/Jordan/j6.jpg",
+    "name": "Jordan Delta 2 3D",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "15",
+    "img": "images/Jordan/j7.jpg",
+    "name": "Jordan MA2 Flair Gum",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "16",
+    "img": "images/Jordan/j8.jpg",
+    "name": "Jordan Point Lane",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "17",
+    "img": "images/Jordan/j9.jpg",
+    "name": "Jordan Series 02",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "18",
+    "img": "images/Jordan/j10.jpg",
+    "name": "Air Jordan  Why Not Zer0.4",
+    "category": "unisex",
+    "price": "30000"
+  },
+  {
+    "id": "19",
+    "img": "images/Jordan/j11.jpg",
+    "name": "Jordan Zion 1",
+    "category": "unisex",
+    "price": "30000"
+  }
+]

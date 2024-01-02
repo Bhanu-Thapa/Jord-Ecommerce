@@ -1,0 +1,15 @@
+.all-card {
+  position: relative;
+  border: 1px solid red;
+}
+
+.all-product {
+  border: 1px solid black;
+  display: grid;
+  width: 1010px;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  justify-content: space-between;
+}

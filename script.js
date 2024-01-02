@@ -53,7 +53,7 @@ let element = [];
 
 /// DATA FETCH ///////
 
-product = fetch('./json/trend.json')
+fetch('./json/trend.json')
   .then((respose) => {
     return respose.json();
   })
