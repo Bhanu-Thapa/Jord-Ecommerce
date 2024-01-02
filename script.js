@@ -129,7 +129,7 @@ function display() {
     <div class="cd-name">${i.name}</div>
     <input class="cd-qty" type="number" min="1" value = "${i.quantity}">
     <div class="cd-price">${i.price}</div>
-    <div class="cd-remove"> <i class="fa-solid fa-trash" ></i>asdf</div>
+    <div class="cd-remove"> <i class="fa-solid fa-trash" ></i></div>
     `;
     tb.appendChild(tr);
     sum += +i.price;

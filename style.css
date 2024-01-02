@@ -162,7 +162,7 @@ nav .list div i {
 .cart-details .tb {
   /* border: 1px solid black; */
   max-height: 300px;
-  /* width: 520px; */
+  width: 520px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
