@@ -138,6 +138,7 @@ function display() {
     tb.appendChild(tr);
     sum += +i.qtyPrice;
     totalPrice.textContent = sum;
+    total.style.display = 'flex';
   });
 
   // INCREMENT AND DECREMENT
@@ -174,7 +175,7 @@ function remove(i) {
   if (cart.length != 0) {
     display();
   } else {
-    ops.style.display = 'initial';
+    ops.style.display = 'block';
     total.style.display = 'none';
     proceed.style.display = 'none';
     display();
@@ -185,7 +186,6 @@ function increment(i) {
   cart[i].quantity++;
   cart[i].qtyPrice = cart[i].price * cart[i].quantity;
   display();
-  console.log(cart);
 }
 
 function decrement(i) {
@@ -249,6 +249,7 @@ iconCart.addEventListener('click', () => {
     proceed.style.display = 'initial';
     total.style.display = 'flex';
   }
+
   cartDetails.style.display = 'initial';
 });
 

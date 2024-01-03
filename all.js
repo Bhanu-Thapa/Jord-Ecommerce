@@ -91,6 +91,7 @@ function display() {
     tb.appendChild(tr);
     sum += +i.qtyPrice;
     totalPrice.textContent = sum;
+    total.style.display = 'flex';
   });
 
   // INCREMENT AND DECREMENT
@@ -127,7 +128,7 @@ function remove(i) {
   if (allCart.length != 0) {
     display();
   } else {
-    ops.style.display = 'initial';
+    ops.style.display = 'block';
     total.style.display = 'none';
     proceed.style.display = 'none';
     display();
