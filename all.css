@@ -14,3 +14,12 @@
   justify-content: space-between;
   margin-bottom: 30px;
 }
+
+.tr .decre {
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.tr .incre {
+  transform: rotate(90deg);
+  cursor: pointer;
+}

@@ -107,10 +107,10 @@ function addCart(product) {
   });
   if (qtyUpdate) {
     qtyUpdate.quantity++;
-    qtyUpdate.price *= qtyUpdate.quantity;
+    qtyUpdate.qtyPrice = qtyUpdate.price * qtyUpdate.quantity;
   } else {
     acc.textContent++;
-    cart.push({ ...product, quantity: 1 });
+    cart.push({ ...product, quantity: 1, qtyPrice: product.price });
   }
   display();
 }
@@ -127,16 +127,36 @@ function display() {
     tr.innerHTML = `
     <div class="cd-img"><img src="${i.img}" alt="product-image"></div>
     <div class="cd-name">${i.name}</div>
-    <input class="cd-qty" type="number" min="1" value = "${i.quantity}">
-    <div class="cd-price">${i.price}</div>
+    <input class="cd-qty" type="text" value = "${i.quantity}">
+    <div>   
+    <i class="fa-solid fa-less-than incre"></i>
+    <i class="fa-solid fa-greater-than decre"></i>
+    </div>
+    <div class="cd-price">${i.qtyPrice}</div>
     <div class="cd-remove"> <i class="fa-solid fa-trash" ></i></div>
     `;
     tb.appendChild(tr);
-    sum += +i.price;
+    sum += +i.qtyPrice;
     totalPrice.textContent = sum;
   });
 
-  // ADD CART
+  // INCREMENT AND DECREMENT
+
+  let incre = document.querySelectorAll('.incre');
+  let decre = document.querySelectorAll('.decre');
+
+  incre.forEach((inc, i) => {
+    inc.addEventListener('click', () => {
+      increment(i);
+    });
+  });
+  decre.forEach((dec, i) => {
+    dec.addEventListener('click', () => {
+      decrement(i);
+    });
+  });
+
+  // REMOVE
   let rem = document.querySelectorAll('.cd-remove');
 
   rem.forEach((rem, i) => {
@@ -150,14 +170,31 @@ function display() {
 function remove(i) {
   acc.textContent--;
   cart.splice(i, 1);
-  console.log(cart.length);
-  if (cart.length > 0) {
+
+  if (cart.length != 0) {
     display();
   } else {
     ops.style.display = 'initial';
     total.style.display = 'none';
     proceed.style.display = 'none';
     display();
+  }
+}
+
+function increment(i) {
+  cart[i].quantity++;
+  cart[i].qtyPrice = cart[i].price * cart[i].quantity;
+  display();
+  console.log(cart);
+}
+
+function decrement(i) {
+  cart[i].quantity--;
+  if (cart[i].quantity != 0) {
+    cart[i].qtyPrice = cart[i].price * cart[i].quantity;
+    display();
+  } else {
+    remove(i);
   }
 }
 
