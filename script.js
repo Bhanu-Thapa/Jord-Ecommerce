@@ -58,7 +58,7 @@ fetch('./json/trend.json')
     return respose.json();
   })
   .then((val) => {
-    val.forEach((p, i) => {
+    val.forEach((p) => {
       // CARD DISPLAY
       let pro = document.createElement('div');
       pro.className = 'product-card';

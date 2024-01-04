@@ -150,3 +150,26 @@ function decrement(i) {
     remove(i);
   }
 }
+
+// SEARCH
+
+let input = document.querySelector('#input');
+
+input.addEventListener('keyup', search);
+
+function search() {
+  let items = allProduct.querySelectorAll('.all-card');
+
+  let inputValue = input.value.toUpperCase();
+
+  items.forEach((ele) => {
+    let itemName = ele.querySelector('.p-name');
+
+    if (itemName.textContent.toUpperCase().indexOf(inputValue) > -1) {
+      console.log(itemName.textContent.toUpperCase().indexOf(inputValue));
+      ele.style.display = 'initial';
+    } else {
+      ele.style.display = 'none';
+    }
+  });
+}

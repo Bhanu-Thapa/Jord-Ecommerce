@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,61 +23,53 @@
       referrerpolicy="no-referrer"
     />
 
-
-    
-
     <title>Jord</title>
   </head>
   <body>
-    
-<div class="container">
+    <div class="container">
+      <header>
+        <nav>
+          <img src="./images/logo/black transparent.png" alt="logo" />
 
-
-    <header>
-      <nav>
-        <img src="./images/logo/black transparent.png" alt="logo">
-       
-        <!-- category -->
-        <div class="category">
-          <div>
-            <h3><a href="./all.html">All Product</a></h3>
+          <!-- category -->
+          <div class="category">
+            <div>
+              <h3><a href="./all.html">All Product</a></h3>
+            </div>
           </div>
-        </div>
 
-        <!-- search -->
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-          <input type="text" placeholder="Search"></input>
-        </div>
+          <!-- search -->
+          <div class="com">
+            <p>Jord E-commerce</p>
+          </div>
 
-        <!-- menu list -->
-        <div class="list">
-          <div>
-          <i class="fa-regular fa-heart fa-xl "></i>
-          <p>wishlist</p>
-        </div>
+          <!-- menu list -->
+          <div class="list">
+            <div>
+              <i class="fa-regular fa-heart fa-xl"></i>
+              <p>wishlist</p>
+            </div>
 
-        <div class="icon-cart">
-          <div class="add-cart-counter">0</div>
-          <i class="fa-solid fa-cart-shopping fa-xl"></i>
-          <p>Cart</p>
-        </div>
+            <div class="icon-cart">
+              <div class="add-cart-counter">0</div>
+              <i class="fa-solid fa-cart-shopping fa-xl"></i>
+              <p>Cart</p>
+            </div>
 
-        <div > 
-          <i class="fa-regular fa-user fa-xl"></i>
-          <p>Profile</p>
-        </div>
-        </div>
+            <div>
+              <i class="fa-regular fa-user fa-xl"></i>
+              <p>Profile</p>
+            </div>
+          </div>
+        </nav>
 
-      </nav>
+        <!-- CART DETAILS -->
 
-      <!-- CART DETAILS -->
-
-      <div class="cart-details">
-        <h2 class="h2">ITEMS</h2>
-        <p> Ops... No ITEM !</p>
-        <div class="tb">
-          <!-- <tr>
+        <div class="cart-details">
+          <h2 class="h2">ITEMS</h2>
+          <p>Ops... No ITEM !</p>
+          <div class="tb">
+            <!-- <tr>
             <td>img</td>
             <td>Item Details </td>
             <td>Price</td>
@@ -87,39 +79,36 @@
             <td>Item Details </td>
             <td>Price</td>
           </tr> -->
-        </div> 
-        <div class="total">
-          <h2>Total</h2>
-          <p class="total-price">ppp</p>
+          </div>
+          <div class="total">
+            <h2>Total</h2>
+            <p class="total-price">ppp</p>
+          </div>
+          <div class="cp">
+            <h2 class="close">CLOSE</h2>
+            <h2 class="proceed">Proceed</h2>
+          </div>
         </div>
-        <div class="cp">
-          <h2 class="close">CLOSE</h2>
-          <h2 class="proceed">Proceed</h2>
+
+        <!-- SLIDER  -->
+
+        <div class="slider">
+          <img class="img" src="./images/bg/bg1.png" alt="sliderimg" />
+          <img class="img" src="./images/bg/bg2.png" alt="sliderimg" />
+          <img class="img" src="./images/bg/bg3.png" alt="sliderimg" />
+          <div class="ar" onclick="next()">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="al" onclick="prev()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
         </div>
-      </div>
+      </header>
 
-
-      <!-- SLIDER  -->
-
-      <div class="slider">
-          <img class="img" src="./images/bg/bg1.png" alt="sliderimg">
-          <img class="img" src="./images/bg/bg2.png" alt="sliderimg">
-          <img class="img" src="./images/bg/bg3.png" alt="sliderimg">
-        <div class="ar" onclick="next()">
-        <i class="fa-solid fa-arrow-right"></i>
-        </div>
-        <div class="al" onclick="prev()">
-        <i class="fa-solid fa-arrow-left"></i>
-       </div>
-      </div>
-      
-    </header>
-
-    <section class="trend-sec">
-      <h2>Trending</h2>
-      <div class="trend-slider">
-
-        <!-- <div class='product-card'>
+      <section class="trend-sec">
+        <h2>Trending</h2>
+        <div class="trend-slider">
+          <!-- <div class='product-card'>
           <div class="p-img">
             <img src="./images/Casual/c1.jpg" alt="Casual">
           </div>
@@ -135,25 +124,18 @@
             </div>
           </div>
         </div> -->
-        <div class="arr agl-hover" onclick="n()">   
-          <i class="fa-solid fa-greater-than"></i>
+          <div class="arr agl-hover" onclick="n()">
+            <i class="fa-solid fa-greater-than"></i>
           </div>
           <div class="all agl-hover" onclick="p()">
             <i class="fa-solid fa-less-than"></i>
-         </div>
-      
-      
-      </div>
+          </div>
+        </div>
 
         <!-- trend btn -->
-        
+      </section>
+    </div>
 
-    </section>
-
-
-
-  </div>
-
-  <script src="./script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
