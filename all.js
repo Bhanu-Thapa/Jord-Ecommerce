@@ -1,5 +1,9 @@
 let allProduct = document.querySelector('.all-product');
 
+// media
+
+let media = window.matchMedia('(max-width:480px)');
+
 fetch('./json/men.json')
   .then((response) => {
     return response.json();
@@ -28,6 +32,8 @@ fetch('./json/men.json')
       allProduct.appendChild(card);
     });
 
+    // style logic for big title
+
     let bigTitle = document.querySelectorAll('.p-name');
     bigTitle.forEach((ele) => {
       if (ele.textContent.length > 24) {
@@ -35,6 +41,15 @@ fetch('./json/men.json')
         ele.style.fontWeight = '500';
       }
     });
+
+    if (media.matches) {
+      bigTitle.forEach((ele) => {
+        if (ele.textContent.length > 24) {
+          ele.style.fontSize = '12px';
+          ele.style.fontWeight = '500';
+        }
+      });
+    }
 
     // ADD CART
 

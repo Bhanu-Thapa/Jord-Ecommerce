@@ -46,3 +46,19 @@ nav .search input {
 nav .search input::placeholder {
   font-size: 18px;
 }
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 480px) {
+  .all-product {
+    width: 400px;
+  }
+
+  nav .search input {
+    width: 140px;
+  }
+
+  nav .search {
+    height: 34px;
+  }
+}

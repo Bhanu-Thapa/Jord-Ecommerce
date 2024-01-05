@@ -16,7 +16,6 @@ font-family: 'Road Rage', sans-serif; */
 }
 
 header {
-  /* background-color: black; */
   height: 85vh;
   margin-bottom: 20px;
 }
@@ -68,6 +67,12 @@ nav .com {
   justify-content: center;
   align-items: center;
   padding: 5px 8px;
+  transition: all 1s;
+}
+
+.com:hover {
+  background-color: rgb(24, 24, 24);
+  color: white;
 }
 
 nav .list {
@@ -155,11 +160,10 @@ nav .list div i {
   outline: none;
   border: none;
   pointer-events: none;
-  /* background-color: red; */
 }
+
 .cd-price {
   width: 50px;
-  /* background-color: red; */
 }
 
 .cd-remove {
@@ -204,6 +208,7 @@ nav .list div i {
 .cp {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .total {
@@ -431,4 +436,167 @@ header {
 .tr .incre {
   transform: rotate(90deg);
   cursor: pointer;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 440px;
+  }
+
+  header {
+    height: 50vh;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    height: 70px;
+  }
+
+  nav img {
+    width: 50px;
+    height: 50px;
+  }
+
+  nav .category {
+    width: 70px;
+    margin-left: 0%;
+  }
+
+  .category a {
+    font-size: 14px;
+  }
+
+  .category a:hover {
+    font-size: 14px;
+  }
+
+  nav .com {
+    font-size: 26px;
+    padding: 2px 5px;
+  }
+
+  nav .list {
+    width: 90px;
+  }
+
+  /* icon cart */
+
+  .icon-cart div {
+    text-align: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .icon-cart i {
+    font-size: 20px;
+  }
+
+  .cart-details {
+    width: 230px;
+  }
+
+  .cart-details .h2 {
+    font-size: 28px;
+  }
+
+  .cart-details p {
+    font-size: 26px;
+  }
+
+  .cart-details .tr {
+    width: 230px;
+  }
+
+  .cd-img {
+    width: 40px;
+  }
+
+  .cd-name {
+    padding-left: 3px;
+    width: 90px;
+    font-size: 12px;
+  }
+
+  .cd-qty {
+    width: 10px;
+  }
+
+  .cd-remove {
+    padding: 2px;
+  }
+
+  .cart-details .close {
+    font-size: 18px;
+    width: 70px;
+  }
+
+  .proceed {
+    width: 100px;
+    font-size: 18px;
+  }
+
+  .total {
+    height: 24px;
+    padding: 8px;
+  }
+
+  /* slider */
+
+  .slider img {
+    width: 440px;
+  }
+
+  .ar,
+  .al {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* trend */
+
+  .trend-sec h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .trend-slider {
+    height: 220px;
+  }
+
+  .product-card {
+    height: 200px;
+    width: 120px;
+    justify-content: start;
+  }
+
+  .p-img {
+    width: 118px;
+    height: 122px;
+  }
+
+  .p-details-sec {
+    margin: 2px;
+  }
+
+  .p-name,
+  .p-price {
+    font-size: 12px;
+  }
+
+  .p-cate {
+    font-size: 14px;
+  }
+
+  .add-cart {
+    width: 48px;
+    height: 35px;
+  }
+
+  .add-cart p {
+    display: none;
+  }
 }
