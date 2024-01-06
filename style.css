@@ -59,6 +59,7 @@ nav a:visited {
 }
 
 nav .com {
+  font-weight: 700;
   border: 1px solid black;
   border-radius: 7px;
   font-size: 36px;
@@ -473,7 +474,7 @@ header {
   }
 
   nav .com {
-    font-size: 26px;
+    font-size: 22px;
     padding: 2px 5px;
   }
 
@@ -484,11 +485,15 @@ header {
   /* icon cart */
 
   .icon-cart div {
-    text-align: center;
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
     font-size: 12px;
+    left: 70%;
+    bottom: 86%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .icon-cart i {
@@ -507,6 +512,10 @@ header {
     font-size: 26px;
   }
 
+  .cart-details .tb {
+    width: 230px;
+  }
+
   .cart-details .tr {
     width: 230px;
   }
@@ -522,7 +531,14 @@ header {
   }
 
   .cd-qty {
-    width: 10px;
+    width: 18px;
+    text-align: center;
+    border: 1px solid black;
+  }
+
+  .cd-inde {
+    width: 20px;
+    text-align: center;
   }
 
   .cd-remove {

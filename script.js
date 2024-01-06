@@ -128,7 +128,7 @@ function display() {
     <div class="cd-img"><img src="${i.img}" alt="product-image"></div>
     <div class="cd-name">${i.name}</div>
     <input class="cd-qty" type="text" value = "${i.quantity}">
-    <div>   
+    <div class="cd-inde">   
     <i class="fa-solid fa-less-than incre"></i>
     <i class="fa-solid fa-greater-than decre"></i>
     </div>
