@@ -259,3 +259,9 @@ close.addEventListener('click', () => {
 
 let total = cartDetails.querySelector('.total');
 let totalPrice = cartDetails.querySelector('.total-price');
+
+// alert msg
+
+function profile() {
+  alert(`Thank You for Clicking 🎊 This Site is Only for demo Practice 🤗`);
+}
